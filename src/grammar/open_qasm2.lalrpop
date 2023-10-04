@@ -187,7 +187,7 @@ Size: usize = <v:int> => usize::from_str(&v).unwrap();
 Int: u64 = <v:int> => u64::from_str(&v).unwrap();
 
 Real: f64 = {
-    <v:real> => f64::from_str(&v).unwrap(),
+    <v:real> => lexical::parse(&v).unwrap(),
     <v:int> => f64::from_str(&v).unwrap()
 }
 
